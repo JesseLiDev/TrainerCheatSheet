@@ -2,12 +2,10 @@
 from genericpath import exists
 import json 
 import requests 
-from types import SimpleNamespace
-import loginToken
-import loginToken
+from types import SimpleNamespace 
+import getLoginToken
 
-a = loginToken.test()
-token = a.seleniumLogin()
+token = getLoginToken.getToken().seleniumLogin()
 print("I ran a new piece of code that gave me: ", token)
 
 headers = {
@@ -39,8 +37,7 @@ json_data = {
 response = requests.post('https://api.trainerize.com/v03/calendar/getList', headers=headers, json=json_data)
 
 test = json.loads(response.text)
-
-print(test)
+ 
 
  
 #Approach: Make a loop statement that looks at the current data. If calories exist, run the nutritionData function to
