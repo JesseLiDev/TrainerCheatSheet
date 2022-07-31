@@ -42,8 +42,7 @@ test = json.loads(response.text)
 
 print(test)
 
-
-print(test)
+ 
 #Approach: Make a loop statement that looks at the current data. If calories exist, run the nutritionData function to
 #put that data into a variable. If it doesn't exist, skip over the data for that day and iterate to the next data point
 
