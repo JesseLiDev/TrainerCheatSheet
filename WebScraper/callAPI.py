@@ -1,5 +1,6 @@
 import getLoginToken
 import getCurrentClients
+import getClientData
 
 #Get Login token
 # token = getLoginToken.getToken().seleniumLogin() 
@@ -8,8 +9,11 @@ import getCurrentClients
 
  #get Current Clients
  
-clientList = getCurrentClients.client().getClientList() 
-print("I ran a new piece of code that gave me: ", clientList)
+# clientList = getCurrentClients.clientList().getClientList() 
+# print("I ran a new piece of code that gave me: ", clientList)
 
 
+#Pass each client in client list to
 
+clientData = getClientData.decisionData().getDecisionData(7660017) 
+print("I ran a new piece of code that gave me: ", clientData)

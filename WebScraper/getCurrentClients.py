@@ -1,6 +1,6 @@
 import requests, json
 
-class client:
+class clientList:
 
     def getClientList(self):
         headers = {
