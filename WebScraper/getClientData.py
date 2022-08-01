@@ -11,10 +11,7 @@ lastMonday = today - datetime.timedelta(days=today.weekday())
  
 today = datetime.date.today().strftime("%Y-%m-%d")
 lastMonday = lastMonday.strftime("%Y-%m-%d")
-
-# class decisionData:
-
-#     def getDecisionData(self, clientID):
+ 
 class clientData:
 
     def getClientData(self, clientId):        
@@ -37,7 +34,7 @@ class clientData:
             'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36',
         } 
         json_data = {
-            'userid': '7660017', #clientID,
+            'userid': clientId, #clientID,
             'startDate': lastMonday,
             'endDate': today,
             'unitDistance': 'miles',
@@ -49,6 +46,7 @@ class clientData:
         clientData = json.loads(response.text)
 
         if clientData:
+            allClientData = []
             countA = 0
             countB = 0
             weekAvgCount = 0
@@ -63,12 +61,14 @@ class clientData:
                             b = clientData['calendar'][countA]['items'][countB]['detail']['proteinGrams']
                             c = clientData['calendar'][countA]['items'][countB]['detail']['fatGrams']
                             d = clientData['calendar'][countA]['items'][countB]['detail']['carbsGrams']
-                            print("Date: ", aa)
-                            print("Calories: ", a)
-                            print("Protein: ", b)
-                            print("Fats: ", c)
-                            print("Carbs: ", d)
-                            print("\n" )
+                            
+                            allClientData.extend([aa,a,b,c,d])
+                            # print("Date: ", aa)
+                            # print("Calories: ", a)
+                            # print("Protein: ", b)
+                            # print("Fats: ", c)
+                            # print("Carbs: ", d)
+                            # print("\n" )
                             countB += 1
                             weekAvgCount +=1
                             weekAvgTotal +=a
@@ -82,9 +82,14 @@ class clientData:
         else:
             print("List is empty")
 
-        caloireSummary = weekAvgTotal/weekAvgCount
-
-        print("This is the Total number of days: ", weekAvgCount)
-        print("This is the average number of calories: ", caloireSummary) 
+        if(weekAvgCount != 0 and weekAvgTotal != 0):
+            caloireSummary = weekAvgTotal/weekAvgCount
+            
+            allClientData.insert(0, weekAvgCount)
+            allClientData.insert(0, caloireSummary)
+        else:
+            allClientData.insert(0, 0)
+            allClientData.insert(0, 0)
+        return allClientData
  
 
