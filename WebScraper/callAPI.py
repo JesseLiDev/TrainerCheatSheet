@@ -1,3 +1,4 @@
+from http import client
 import getLoginToken
 import getCurrentClients
 import getClientData
@@ -9,11 +10,17 @@ import getClientData
 
  #get Current Clients
  
-# clientList = getCurrentClients.clientList().getClientList() 
+clientList = getCurrentClients.clientList().getClientList() 
 # print("I ran a new piece of code that gave me: ", clientList)
-
+ 
 
 #Pass each client in client list to
 
-clientData = getClientData.decisionData().getDecisionData(7660017) 
-print("I ran a new piece of code that gave me: ", clientData)
+
+a = 0
+for x in clientList:
+    clientData =[] 
+    clientData = getClientData.clientData().getClientData(clientList[a][0]) 
+    clientList[a].append(clientData)
+    a += 1
+print("Test: ", clientList)
