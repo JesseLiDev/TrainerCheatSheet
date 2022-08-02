@@ -2,12 +2,12 @@ import requests, json
 
 class clientList:
 
-    def getClientList(self):
+    def getClientList(self, token):
         headers = {
             'authority': 'api.trainerize.com',
             'accept': 'application/json, text/javascript, */*; q=0.01',
             'accept-language': 'en-US,en;q=0.9',
-            'authorization': 'Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjcwMTI3NTcsInNjb3BlIjoiQWxsIiwiaWF0IjoxNjU5Mzk4MzU0NzA0LCJleHAiOjE2NTk0MjcxNTQ3MDR9.QPUG0ksKe_-qiYamA_dRzTymbLAHVdPgx_uYb9-8nl0',
+            'authorization': token,
             'content-type': 'application/json; charset=UTF-8',
             'datetoday': '2022-07-31 14:02:44',
             'origin': 'https://justinbauerfitness.trainerize.com',

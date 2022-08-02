@@ -5,6 +5,7 @@
 #      -Average Protein
 #      -Average Fats
 #      -Average Carbs
+#      *FOR ALL AVG INFO, OMITT TODAY'S DATA
 import datetime
 
 class foodAvg:

@@ -1,19 +1,18 @@
-from sqlalchemy import null
+  
+import json 
+import requests  
+import datetime  
+from datetime import datetime as dt
 
-
-z = [4,5,6,7]
-
-b = len(z) 
-a = 0
-for x in b//2:
-    print(z[a])
-    a+=1
-
+  
  
-
-
-
-# if len(z) == 0:
-#     print("zero stuff")
-# else:
-#     print("Stuff")
+strToday = datetime.date.today().strftime("%Y-%m-%d") #returns a string
+dateToday = dt.strptime(strToday,'%Y-%m-%d')
+ 
+if dateToday.weekday() != 0:
+    lastMonday = dateToday - datetime.timedelta(days=dateToday.weekday())
+    lastMonday = lastMonday.strftime("%Y-%m-%d") 
+else:
+    lastMonday = dateToday - datetime.timedelta(7)
+    lastMonday = lastMonday.strftime("%Y-%m-%d") 
+ 

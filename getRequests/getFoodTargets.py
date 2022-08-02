@@ -3,12 +3,12 @@ import json
 
 class foodTargets:
 
-    def getFoodTargets(self, clientId):
+    def getFoodTargets(self, clientId, token):
         headers = {
             'authority': 'api.trainerize.com',
             'accept': 'application/json',
             'accept-language': 'en-US,en;q=0.9',
-            'authorization': 'Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjcwMTI3NTcsInNjb3BlIjoiQWxsIiwiaWF0IjoxNjU5Mzk5NDg3ODQ1LCJleHAiOjE2NTk0MjgyODc4NDV9._RuCuxxXiOdLVFLINOEZjBBXUrdlL1eu03byIyQDWd4',
+            'authorization': token,
             # Already added when you pass json=
             # 'content-type': 'application/json',
             'datetoday': '2022-08-01 18:42:45',

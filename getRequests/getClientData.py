@@ -4,22 +4,15 @@
   
 import json 
 import requests  
-import datetime  
-
-today = datetime.date.today()
-lastMonday = today - datetime.timedelta(days=today.weekday())
- 
-today = datetime.date.today().strftime("%Y-%m-%d")
-lastMonday = lastMonday.strftime("%Y-%m-%d")
 
 class clientData:
 
-    def getClientData(self, clientId):        
+    def getClientData(self, clientId, token, today, lastMonday):        
         headers = {
             'authority': 'api.trainerize.com',
             'accept': 'application/json, text/javascript, */*; q=0.01',
             'accept-language': 'en-US,en;q=0.9',
-            'authorization': 'Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjcwMTI3NTcsInNjb3BlIjoiQWxsIiwiaWF0IjoxNjU5Mzk4MzU0NzA0LCJleHAiOjE2NTk0MjcxNTQ3MDR9.QPUG0ksKe_-qiYamA_dRzTymbLAHVdPgx_uYb9-8nl0',
+            'authorization': token,
             'content-type': 'application/json; charset=UTF-8',
             'datetoday': '2022-07-28 15:01:33',
             'origin': 'https://justinbauerfitness.trainerize.com',
@@ -35,7 +28,7 @@ class clientData:
         } 
         json_data = {
             'userid': clientId, #clientID,
-            'startDate': '2022-07-25',
+            'startDate': lastMonday,
             'endDate': today,
             'unitDistance': 'miles',
             'unitWeight': 'lbs',
@@ -91,7 +84,7 @@ class clientData:
         allClientData = []
         workoutWeightData = []
         allNutritionData = []
-        workoutWeightData.extend((bodyWeight,workoutSessions, cardioSessions))
+        workoutWeightData.extend((bodyWeight, workoutSessions, cardioSessions))
         allNutritionData.extend((nutritionData))
         allClientData.append(workoutWeightData)
         allClientData.append(allNutritionData)
