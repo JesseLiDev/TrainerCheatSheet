@@ -1,5 +1,79 @@
+clientData = {'calendar': [{
+        'date': '2022-07-25',
+        'items': [{
+            'id': 340624002,
+            'type': 'workoutRegular',
+            'title': '[Gym] Full Body 1A',
+            'status': 'tracked',
+            'subtitle': None,
+            'sort': 10,
+            'fromProgram': True,
+            'userProgramID': 5462207,
+            'createdBy': {
+                'id': 7012757,
+                'firstName': None,
+                'lastName': None
+            },
+            'numberOfComments': 1,
+            'detail': {
+                'workoutID': 87886652,
+                'rpe': 6
+            }
+        }, {
+            'id': 94094871,
+            'type': 'bodyStat',
+            'title': '152.8 lbs',
+            'status': 'tracked',
+            'subtitle': None,
+            'sort': 30,
+            'fromProgram': True,
+            'userProgramID': 5462207,
+            'createdBy': None,
+            'numberOfComments': 0,
+            'detail': {
+                'weight': 152.8,
+                'fat': None,
+                'restingHeartRate': None,
+                'bloodPressureDiastolic': 0.0,
+                'bloodPressureSystolic': 0.0
+            }
+        }, {
+            'id': 129347852,
+            'type': 'nutrition',
+            'title': '3 Meals Added',
+            'status': 'tracked',
+            'subtitle': 'Protein 77g, Carbs 129g, Fat 39g',
+            'sort': 50,
+            'fromProgram': False,
+            'userProgramID': None,
+            'createdBy': None,
+            'numberOfComments': 0,
+            'detail': {
+                'meetGoal': False,
+                'numberOfMeal': 3,
+                'calories': 1148.24,
+                'carbsGrams': 129.12,
+                'proteinGrams': 76.67,
+                'fatGrams': 38.98,
+                'meals': None,
+                'mealPhoto': None
+            }
+        }, {
+            'id': 36508791,
+            'type': 'message',
+            'title': 'Check In',
+            'status': 'scheduled',
+            'subtitle': '',
+            'sort': 360,
+            'fromProgram': False,
+            'userProgramID': None,
+            'createdBy': None,
+            'numberOfComments': 0,
+            'detail': None
+        }]
+    }]}
 
-
+print(len(clientData['calendar'][0]["items"]))
  
 # import datetime 
 
@@ -31,13 +105,13 @@
 #     print(today)
 #     print("false")
 
-a = [ [1,2,3,4], [11,12,13,14] ]
+# a = [ [1,2,3,4], [11,12,13,14] ]
   
  
-a[0].append(5)
+# a[0].append(5)
 
-a[1].append(15)
-print(a)
+# a[1].append(15)
+# print(a)
 
 
 # a = 1 

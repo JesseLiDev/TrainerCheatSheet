@@ -19,7 +19,7 @@ class clientData:
             'authority': 'api.trainerize.com',
             'accept': 'application/json, text/javascript, */*; q=0.01',
             'accept-language': 'en-US,en;q=0.9',
-            'authorization': 'Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjcwMTI3NTcsInNjb3BlIjoiQWxsIiwiaWF0IjoxNjU5MjkwMjYzMDcxLCJleHAiOjE2NTkzMTkwNjMwNzF9.jHYtAKbzGalGYwcQB-KEt5oyJMIb2juEjQHQuJRQAPc',
+            'authorization': 'Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjcwMTI3NTcsInNjb3BlIjoiQWxsIiwiaWF0IjoxNjU5Mzk4MzU0NzA0LCJleHAiOjE2NTk0MjcxNTQ3MDR9.QPUG0ksKe_-qiYamA_dRzTymbLAHVdPgx_uYb9-8nl0',
             'content-type': 'application/json; charset=UTF-8',
             'datetoday': '2022-07-28 15:01:33',
             'origin': 'https://justinbauerfitness.trainerize.com',
@@ -35,7 +35,7 @@ class clientData:
         } 
         json_data = {
             'userid': clientId, #clientID,
-            'startDate': lastMonday,
+            'startDate': '2022-07-25',
             'endDate': today,
             'unitDistance': 'miles',
             'unitWeight': 'lbs',
@@ -46,11 +46,13 @@ class clientData:
         clientData = json.loads(response.text)
 
         if clientData:
+            nutritionData = []
             allClientData = []
             countA = 0
-            countB = 0
-            weekAvgCount = 0
-            weekAvgTotal = 0
+            countB = 0 
+            cardioSessions = 0
+            workoutSessions = 0
+            bodyWeight = 0
             for date in clientData['calendar']:
                 try: 
                     aa = clientData['calendar'][countA]['date']
@@ -62,18 +64,22 @@ class clientData:
                             c = clientData['calendar'][countA]['items'][countB]['detail']['fatGrams']
                             d = clientData['calendar'][countA]['items'][countB]['detail']['carbsGrams']
                             
-                            allClientData.extend([aa,a,b,c,d])
-                            # print("Date: ", aa)
-                            # print("Calories: ", a)
-                            # print("Protein: ", b)
-                            # print("Fats: ", c)
-                            # print("Carbs: ", d)
-                            # print("\n" )
-                            countB += 1
-                            weekAvgCount +=1
-                            weekAvgTotal +=a
+                            nutritionData.extend([aa,a,b,c,d])
+
                         except:
-                            countB += 1
+                            z = 0
+                        try:
+                            if clientData['calendar'][countA]["items"][countB]['type'] == 'cardio' and clientData['calendar'][countA]["items"][countB]['status'] == 'tracked':
+                                cardioSessions += 1
+                            
+                            if clientData['calendar'][countA]["items"][countB]['type'] == 'workoutRegular' and clientData['calendar'][countA]["items"][countB]['status'] == 'tracked':
+                                workoutSessions +=1
+                            
+                            if clientData['calendar'][countA]["items"][countB]['type'] == 'bodyStat' and clientData['calendar'][countA]["items"][countB]['status'] == 'tracked':
+                                bodyWeight = clientData['calendar'][countA]["items"][countB]['title'] 
+                        except:
+                            z = 0
+                        countB += 1 
                     countA +=1
                     countB = 0
                 except:
@@ -82,14 +88,14 @@ class clientData:
         else:
             print("List is empty")
 
-        if(weekAvgCount != 0 and weekAvgTotal != 0):
-            caloireSummary = weekAvgTotal/weekAvgCount
-            
-            allClientData.insert(0, weekAvgCount)
-            allClientData.insert(0, caloireSummary)
-        else:
-            allClientData.insert(0, 0)
-            allClientData.insert(0, 0)
+        allClientData = []
+        workoutWeightData = []
+        allNutritionData = []
+        workoutWeightData.extend((bodyWeight,workoutSessions, cardioSessions))
+        allNutritionData.extend((nutritionData))
+        allClientData.append(workoutWeightData)
+        allClientData.append(allNutritionData)
+
         return allClientData
  
 
