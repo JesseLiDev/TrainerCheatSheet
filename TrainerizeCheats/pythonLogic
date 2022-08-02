@@ -1,18 +1,6 @@
-  
-import json 
-import requests  
-import datetime  
-from datetime import datetime as dt
+a = '500'
+b = '600'
 
-  
- 
-strToday = datetime.date.today().strftime("%Y-%m-%d") #returns a string
-dateToday = dt.strptime(strToday,'%Y-%m-%d')
- 
-if dateToday.weekday() != 0:
-    lastMonday = dateToday - datetime.timedelta(days=dateToday.weekday())
-    lastMonday = lastMonday.strftime("%Y-%m-%d") 
-else:
-    lastMonday = dateToday - datetime.timedelta(7)
-    lastMonday = lastMonday.strftime("%Y-%m-%d") 
- 
+c = (int(a) - int(b))/ int(b)
+print(abs(c))
+
