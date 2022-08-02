@@ -11,7 +11,7 @@ lastMonday = today - datetime.timedelta(days=today.weekday())
  
 today = datetime.date.today().strftime("%Y-%m-%d")
 lastMonday = lastMonday.strftime("%Y-%m-%d")
- 
+
 class clientData:
 
     def getClientData(self, clientId):        

@@ -49,5 +49,3 @@ class clientList:
             client = []
             a += 1
         return(clientList)
-         
-
