@@ -1,6 +1,0 @@
-a = '500'
-b = '600'
-
-c = (int(a) - int(b))/ int(b)
-print(abs(c))
-

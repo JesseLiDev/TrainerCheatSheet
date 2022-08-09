@@ -1,0 +1,12 @@
+<h3> Trainerize Report</h3>
+<hr>
+
+<form action = "" method = "get"> 
+    
+    {{json_list}}<hr/><br/>
+    {% for k,  element in json_list.items %} 
+    {{ element.firstName }}<br/>
+    {{ element.lastName }}<br/>
+    <hr/>
+    {% endfor %}
+</form>

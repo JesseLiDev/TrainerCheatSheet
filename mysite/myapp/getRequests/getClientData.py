@@ -37,7 +37,7 @@ class clientData:
         response = requests.post('https://api.trainerize.com/v03/calendar/getList', headers=headers, json=json_data)
 
         clientData = json.loads(response.text)
-
+    
         if clientData:
             nutritionData = []
             allClientData = []
