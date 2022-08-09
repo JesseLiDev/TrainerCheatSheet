@@ -10,11 +10,11 @@ from wsproto import Headers
 
 class getToken:
 
-    def seleniumLogin(self):    
+    def seleniumLogin(self, userName, password):    
         self.a = ""
         loginUrl = 'https://justinbauerfitness.trainerize.com/app/logon.aspx'
-        username = 'jesse@justinbauerfitness.com'
-        password = 'JesseJesse45' 
+        username = userName
+        password = password 
         wait_time_out = 7
         options = webdriver.ChromeOptions()
         options.add_experimental_option('excludeSwitches', ['enable-logging']) 
