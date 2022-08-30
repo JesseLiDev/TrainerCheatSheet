@@ -1,12 +1,23 @@
-<h3> Trainerize Report</h3>
-<hr>
+<h3> Trainerize Client Report</h3>
+<head></head>
 
-<form action = "" method = "get"> 
+<body>
+
     
-    {{json_list}}<hr/><br/>
     {% for k,  element in json_list.items %} 
-    {{ element.firstName }}<br/>
-    {{ element.lastName }}<br/>
-    <hr/>
+    <div class="container">
+    <div class="col-sm-4">
+    <pre style="position:relative;max-width:75%"> - {{ element.firstName }} {{ element.lastName }} - Weight: {{ element.weight }}
+    Nutrition Tracked:{{ element.numOfNutrition }} Days  
+    Average Calories: {{ element.avgCal }} Target: {{ element.goalCal }}   
+    Average Protein:  {{ element.avgProtein }}   Target: {{ element.goalProtein }}   
+    Average Fats:     {{ element.avgFat }}    Target: {{ element.goalFats }} 
+    Average Carbs:    {{ element.avgCarb }}   Target: {{ element.goalCarb }}      
+    Workouts: {{ element.numOfWorkouts }} Day(s)       
+    Cardio Sessions:  {{ element.numOfCardio }} Day(s)
+    Very Low Cal Days:  {{ element.numOfLowCal }} Day(s)   
+    </pre> 
+    </div> 
+    </div>
     {% endfor %}
-</form>
+</body>
