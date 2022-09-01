@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -11,41 +10,54 @@
 
     </head>
     <body > 
+        <nav id = "nav">
+            <div class ="innerHeader">
+                <ul class="headerLinks">
+                    <a href="http://127.0.0.1:8000/app/loginPage/"><li>Home</li></a>
+                    <a><li>About</li></a>
+                </ul> 
+            </div>
+
+        </nav>
         <div class=" login-box">
             
         <img src="{% static 'mySite/images/logo.png' %}" class="logo">
 
-                    <h1>
+                    <h1 >
                         Trainerize Cheat Sheet
                     </h1>
                     <form action="" method="post">
-                        <div class="form-group">
+                        {% csrf_token %}
+                        <div class="form-group formField" >
                             <label for="exampleInputEmail1">Trainerize Email</label>
                             <input
                                 type="email"
-                                class="form-control"
+                                class="form-control email"
                                 id="exampleInputEmail1"
                                 aria-describedby="emailHelp"
                                 placeholder="Enter email"
+                                size="25"
                             />
                            
                         </div>
-                        <div class="form-group">
+                        <div class="form-group formField">
                             <label for="exampleInputPassword1">Trainerize Password</label>
                             <input
                                 type="password"
                                 class="form-control"
                                 id="exampleInputPassword1"
                                 placeholder="Password"
+                                size="25"
                             />
                         </div>
-                        <button type="submit" class="btn btn-primary">
+                        <div class="form-group formField">
+                        <button type="submit" class="btn btn-primary" >
                             Submit
                         </button>
+                    </div>
                     </form>
                 </div>
             </div>
         </div>
-
     </body>
 </html>

@@ -14,14 +14,13 @@ class dataReport:
     def runReport(userName, password):
 #STEP 1: Get Login token
 
-# username = 'jesse@justinbauerfitness.com'
-# password = 'JesseJesse45'
+        
 
-        # tokenTester = getToken().seleniumLogin(userName, password) 
-        # token = tokenTester
-        # print("Token Test Successful: ", token)
+        tokenTester = getToken().seleniumLogin(userName, password) 
+        token = tokenTester
+        print("Token Test Successful: ", token)
 
-        token = 'Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySUQiOjcwMTI3NTcsInNjb3BlIjoiQWxsIiwiaWF0IjoxNjYwMDgzMTExMDk5LCJleHAiOjE2NjAxMTE5MTEwOTl9.MUqplCLmFmFAgQgaVGSXGaB4wieCz5nFOB0UzHsSKlc'
+        # token = ''
 
 
 
