@@ -17,6 +17,7 @@ class getToken:
         password = password 
         wait_time_out = 7
         options = webdriver.ChromeOptions()
+        options.add_argument('ignore-certificate-errors')
         options.add_experimental_option('excludeSwitches', ['enable-logging']) 
         driver = ww.Chrome(options=options)  
         wait_variable = WebDriverWait(driver, wait_time_out)

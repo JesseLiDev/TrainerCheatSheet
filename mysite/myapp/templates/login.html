@@ -9,7 +9,9 @@
         <title>Trainerize Cheat Sheet</title>
 
     </head>
-    <body > 
+    
+    <body"> 
+        
         <nav id = "nav">
             <div class ="innerHeader">
                 <ul class="headerLinks">
@@ -19,6 +21,7 @@
             </div>
 
         </nav>
+        
         <div class=" login-box">
             
         <img src="{% static 'mySite/images/logo.png' %}" class="logo">
@@ -26,7 +29,9 @@
                     <h1 >
                         Trainerize Cheat Sheet
                     </h1>
-                    <form action="output" method="post">
+                    
+                     <div id="preLoader" >  </div>
+                    <form action="output" method="post"  id="form">
                         {% csrf_token %}
                         <div class="form-group formField" >
                             <label for="trainerUserName">Trainerize Email</label>
@@ -53,13 +58,29 @@
                             />
                         </div>
                         <div class="form-group formField">
-                        <button type="submit" class="btn btn-primary" >
+                        <button type="submit" class="btn btn-primary" onclick="myFunction('preLoader','normal');">
                             Submit
-                        </button>
+                        </button> 
                     </div>
                     </form>
                 </div>
             </div>
         </div>
     </body>
+
+
+    <script>    
+    function myFunction(id, visibility){
+        document.getElementById(id).style.display = visibility;
+        var loader = document.getElementById("preLoader");
+        loader.style.display = "flex"; 
+        var form = document.getElementById("form")
+        form.style.display = "none";
+    }
+  
+
+ 
+
+
+    </script>
 </html>

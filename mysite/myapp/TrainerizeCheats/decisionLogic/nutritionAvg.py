@@ -37,10 +37,10 @@ class foodAvg:
 
             #Get Averages
             if trackedDays > 0:
-                avgCals = avgCals/trackedDays
-                avgPro = avgPro/trackedDays
-                avgFats = avgFats/trackedDays
-                avgCarbs = avgCarbs/trackedDays
+                avgCals = round(avgCals/trackedDays)
+                avgPro = round(avgPro/trackedDays)
+                avgFats = round(avgFats/trackedDays)
+                avgCarbs = round(avgCarbs/trackedDays)
 
             nutritionAverage = []
 

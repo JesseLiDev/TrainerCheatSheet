@@ -22,6 +22,15 @@
         <div  class="aboutPageContainer">
             <h3 class="reportHeader"> Loading Page</h3> 
             
+        <div id="preLoader">  </div>
         </div>
     </body>
+    <script>    
+        var loader = document.getElementById("preLoader");
+    
+        window.addEventListener("load", function(){
+            loader.style.display = "none"
+        })
+    
+        </script>
 </html>

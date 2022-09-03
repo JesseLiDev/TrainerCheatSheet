@@ -55,12 +55,15 @@ def loginPage(request):
 
 
 def loadingPage(request):
-    username = request.POST['email']
-    password = request.POST['password']
+    if request.method == 'POST':
+    
+        username = request.POST['email']
+        password = request.POST['password']
 
-    z = dataReport.runReport(username,password) 
-    z = {'json_list': z}
-    return render(request, 'output.html', z) 
+        z = dataReport.runReport(username,password) 
+        z = {'json_list': z}
+        return render(request, 'output.html', z) 
+    return render(request, 'loadingPage.html') 
 
 
 def aboutPage(request): 

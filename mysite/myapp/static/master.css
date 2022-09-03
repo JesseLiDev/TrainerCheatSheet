@@ -78,7 +78,7 @@ body{
 .login-box{
     width: 320px;
     height: 420px;
-    background: rgba(0, 0, 0, .95);
+    background: rgba(0, 0, 0, 1);
     color: #fff;    
     top: 50%;
     left: 50%;
@@ -179,4 +179,13 @@ h1{
 .email{
     
    color: #000;
+}
+
+#preLoader{
+    background: rgba(0, 0, 0) url(mysite/images/loading.gif) no-repeat center ;
+    display: none;
+    width: 265px;
+    height: 200px;    
+    position: absolute;
+
 }
