@@ -1,12 +1,42 @@
-<h3> Trainerize Report</h3>
-<hr>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'master.css'%}">
+        
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Trainerize Cheat Sheet</title>
 
-<form action = "" method = "get"> 
+    </head>
+    <nav id = "nav">
+        <div class ="innerHeader">
+            <ul class="headerLinks">
+                <a href="http://127.0.0.1:8000/app/loginPage/"><li>Home</li></a>
+                <a><li>About</li></a>
+            </ul> 
+        </div>
+
+    </nav>
     
-    {{json_list}}<hr/><br/>
-    {% for k,  element in json_list.items %} 
-    {{ element.firstName }}<br/>
-    {{ element.lastName }}<br/>
-    <hr/>
+<body> 
+       
+    <div  class="dataBoxContainer">
+            
+            <h3 class="reportHeader"> Trainerize Client Report</h3> 
+            
+            {% for k,  element in json_list.items %}  
+            <pre class="clientData"> - {{ element.firstName }} {{ element.lastName }} - Weight: {{ element.weight }}
+            Nutrition Tracked:{{ element.numOfNutrition }} Days  
+            Average Calories: {{ element.avgCal }} Target: {{ element.goalCal }}   
+            Average Protein:  {{ element.avgProtein }}   Target: {{ element.goalProtein }}   
+            Average Fats:     {{ element.avgFat }}    Target: {{ element.goalFats }} 
+            Average Carbs:    {{ element.avgCarb }}   Target: {{ element.goalCarb }}      
+            Workouts: {{ element.numOfWorkouts }} Day(s)       
+            Cardio Sessions:  {{ element.numOfCardio }} Day(s)
+            Very Low Cal Days:  {{ element.numOfLowCal }} Day(s)   
+            </pre>  
+    
     {% endfor %}
-</form>
+</div> 
+</body>

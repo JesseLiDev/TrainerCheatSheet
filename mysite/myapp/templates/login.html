@@ -1,10 +1,65 @@
-<h3> Trainerize Login</h3>
-<hr>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'master.css'%}">
+        
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Trainerize Cheat Sheet</title>
 
-<form action = "" method = "post"> 
-    {% csrf_token %}
-    {{form}}
-    
-    <input = type="submit">
-</form>
-  
+    </head>
+    <body > 
+        <nav id = "nav">
+            <div class ="innerHeader">
+                <ul class="headerLinks">
+                    <a href="http://127.0.0.1:8000/app/loginPage/"><li>Home</li></a>
+                    <a href="http://127.0.0.1:8000/app/about/"><li>About</li></a>
+                </ul> 
+            </div>
+
+        </nav>
+        <div class=" login-box">
+            
+        <img src="{% static 'mySite/images/logo.png' %}" class="logo">
+
+                    <h1 >
+                        Trainerize Cheat Sheet
+                    </h1>
+                    <form action="output" method="post">
+                        {% csrf_token %}
+                        <div class="form-group formField" >
+                            <label for="trainerUserName">Trainerize Email</label>
+                            <input
+                                type="email"
+                                class="form-control email"
+                                id="trainerUserName"
+                                aria-describedby="emailHelp"
+                                placeholder="Enter email"
+                                size="25"
+                                name="email"
+                            />
+                           
+                        </div>
+                        <div class="form-group formField">
+                            <label for="trainerPassword">Trainerize Password</label>
+                            <input
+                                type="password"
+                                class="form-control email"
+                                id="trainerPassword"
+                                placeholder="Password"
+                                size="25"
+                                name="password"
+                            />
+                        </div>
+                        <div class="form-group formField">
+                        <button type="submit" class="btn btn-primary" >
+                            Submit
+                        </button>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
