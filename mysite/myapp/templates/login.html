@@ -14,7 +14,7 @@
             <div class ="innerHeader">
                 <ul class="headerLinks">
                     <a href="http://127.0.0.1:8000/app/loginPage/"><li>Home</li></a>
-                    <a><li>About</li></a>
+                    <a href="http://127.0.0.1:8000/app/about/"><li>About</li></a>
                 </ul> 
             </div>
 
@@ -26,28 +26,30 @@
                     <h1 >
                         Trainerize Cheat Sheet
                     </h1>
-                    <form action="" method="post">
+                    <form action="output" method="post">
                         {% csrf_token %}
                         <div class="form-group formField" >
-                            <label for="exampleInputEmail1">Trainerize Email</label>
+                            <label for="trainerUserName">Trainerize Email</label>
                             <input
                                 type="email"
                                 class="form-control email"
-                                id="exampleInputEmail1"
+                                id="trainerUserName"
                                 aria-describedby="emailHelp"
                                 placeholder="Enter email"
                                 size="25"
+                                name="email"
                             />
                            
                         </div>
                         <div class="form-group formField">
-                            <label for="exampleInputPassword1">Trainerize Password</label>
+                            <label for="trainerPassword">Trainerize Password</label>
                             <input
                                 type="password"
-                                class="form-control"
-                                id="exampleInputPassword1"
+                                class="form-control email"
+                                id="trainerPassword"
                                 placeholder="Password"
                                 size="25"
+                                name="password"
                             />
                         </div>
                         <div class="form-group formField">

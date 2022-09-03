@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% load static %}
+        <link rel="stylesheet" href="{% static 'master.css'%}">
+        
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Trainerize Cheat Sheet</title>
+
+    </head>
+    <nav id = "nav">
+        <div class ="innerHeader">
+            <ul class="headerLinks">
+                <a href="http://127.0.0.1:8000/app/loginPage/"><li>Home</li></a>
+                <a><li>About</li></a>
+            </ul> 
+        </div>
+
+    </nav>
+    <body > 
+        <div  class="aboutPageContainer">
+            <h3 class="reportHeader"> About Trainerize Cheats</h3> 
+            <p class="aboutText"> Trainerize Cheats is a web application designed to make researching your client's information much faster. <br>
+                                  How it works:<br><br>
+                                   &nbsp; 1. Enter in your trainerize login information on the login page. <br><br>
+                                   &nbsp;2. TrainerizeCheatSheet uses your credentials to directly talk to the Trainerize Server API to get all of your client's<br>
+                                    nutrition and workout information in a matter of seconds. WE DO NOT SAVE YOUR LOGIN CREDENTIALS <br><br>
+                                   &nbsp;3. TrainerizeCheatSheet generates a report displaying the following information:<br><br>
+                                   &nbsp; &nbsp;  &nbsp; A. An average of each of your client's Caloires, Protein, Carbs, and Fats since the previous Monday. <br><br>
+                                   &nbsp; &nbsp;  &nbsp; B. The number of cardio and resistance training sessions your client completed since last Monday.<br><br>
+                                   &nbsp; &nbsp;  &nbsp; C. The current nutrition targets of each of your clients (specified by you in your client's Target section in trainerize)<br><br>
+                                   &nbsp; 4. Use this report to illustrate to your clients how close they were to their nutrition goals over the past week!
+            </p>
+        </div>
+    </body>
+</html>
