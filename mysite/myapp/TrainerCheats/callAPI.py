@@ -18,9 +18,7 @@ class dataReport:
 
         tokenTester = getToken().seleniumLogin(userName, password) 
         token = tokenTester
-        print("Token Test Successful: ", token)
-
-        # token = ''
+        print("Token Test Successful: ", token) 
 
 
 
@@ -46,8 +44,7 @@ class dataReport:
         a = 0
         for x in clientList:
             clientStorage =[] 
-            clientStorage =  clientData().getClientData(clientList[a][0], token, strToday, strlastMonday) 
-        # clientStorage =  clientData().getClientData(clientList[a][0], token, '2022-08-01', '2022-07-25')
+            clientStorage =  clientData().getClientData(clientList[a][0], token, strToday, strlastMonday)  
             clientList[a].append(clientStorage[0])
             clientList[a].append(clientStorage[1])
             a += 1 
@@ -131,11 +128,4 @@ class dataReport:
 
 
         return dictData
-        #STEP 6: Print out user summary
-
-        # a=0
-        # for x in clientList:
-
-        #     runReport = reportClass(clientList[a], dateToday, lastMonday)
-        #     runReport.getGeneralReport()
-        #     a+=1
+ 

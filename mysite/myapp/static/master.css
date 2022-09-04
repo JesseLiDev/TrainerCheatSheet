@@ -30,19 +30,9 @@ body{
 
 .logo{
     padding-left: 5px;
+    border-radius: 25px;
 }
- 
- /* 
- <nav id = "nav">
-    <div class ="innerHeader">
-        <ul class="headerLinks">
-            <a href="http://127.0.0.1:8000/app/loginPage/"><li>Home</li></a>
-            <a><li>About</li></a>
-        </ul> 
-    </div> 
-</nav> 
-        */
-
+  
         #nav {
             position: absolute;
             top: 0;
