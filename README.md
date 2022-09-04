@@ -1,5 +1,5 @@
-# TrainerizeCheats
-#This program is designed to use the trainerize app and pull down client information that is most valuable to the trainer
+# TrainerCheats
+#This program is designed to use the trainer app and pull down client information that is most valuable to the trainer
 
 Key functionality:
 -Grabs user authentication token when signing into trainerize
