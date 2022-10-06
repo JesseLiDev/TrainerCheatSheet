@@ -3,7 +3,7 @@
 
 Key functionality:
 
--Grabs user authentication token by signing into the trainerize Web App
+-Grabs user authentication token by signing into the trainer Web App
 
 -Uses the token to make api requests to the Trainerize server to get information about every client in a matter of seconds
 
